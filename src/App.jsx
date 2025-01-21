@@ -1,4 +1,5 @@
 import React from "react"
+import "./App.css"
 
 class App extends React.Component {
   constructor(props) {
@@ -111,6 +112,7 @@ class App extends React.Component {
     return(
       <div id="drum-machine">
         <Display />
+        <div className="pad-container">
         {this.state.data.map((item) => {
           return <DrumPad
           key={item.id}
@@ -119,6 +121,7 @@ class App extends React.Component {
           src={item.src}
           clickHandler={this.handleClick}/>
         })}
+        </div>
       </div>
     )
   }
